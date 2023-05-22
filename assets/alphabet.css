@@ -1,0 +1,35 @@
+.alphabet {
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+.alphabet .num {
+    font-size: 20px;
+    text-align: center;
+}
+
+.alphabet .end {
+    text-align: left;
+}
+
+.alphabet .middle {
+    text-align: center;
+}
+
+.alphabet .begin {
+    text-align: right;
+}
+
+th {
+    border: 2px solid black;
+    padding: 10px;
+    padding-right: 30px;
+}
+
+td {
+    border: 2px solid gray;
+    padding: 10px;
+    padding-right: 30px;
+    font-size: 30px;
+
+}
