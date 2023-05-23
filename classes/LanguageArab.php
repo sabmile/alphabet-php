@@ -1,5 +1,7 @@
 <?php
 
+require_once 'const.php';
+
 class LanguageArab extends LanguageAbstractInterface
 {
     public function init(): array
@@ -7,15 +9,17 @@ class LanguageArab extends LanguageAbstractInterface
         return [
             // alif
             1575 => [
-                'begin' => [1575],
-                'middle' => [1600, 1575],
-                'end' => [1600, 1575],
+                SEPARATE => [1575],
+                BEGIN => [1575],
+                MIDDLE => [1600, 1575],
+                END => [1600, 1575],
             ],
             // ba
             1576 => [
-                'begin' => [1600, 1576],
-                'middle' => [1600, 1576, 1600],
-                'end' => [1576, 1600],
+                SEPARATE => [1576],
+                BEGIN => [1600, 1576],
+                MIDDLE => [1600, 1576, 1600],
+                END => [1576, 1600],
             ]
         ];
     }
@@ -44,6 +48,20 @@ class LanguageArab extends LanguageAbstractInterface
 
         foreach ($arr as $code) {
             $res .= $sepBegin . $code . $sepEnd;
+        }
+
+        return $res;
+    }
+
+    public function getHtmlLetters(array $arr): array
+    {
+        $res = [];
+
+        foreach ($arr as $separateLetter => $positions) {
+            $res[$separateLetter] = $positions;
+            foreach ($positions as $position => $code) {
+                $res[$separateLetter][$position] = $this->toStr($code);
+            }
         }
 
         return $res;

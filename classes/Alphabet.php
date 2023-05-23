@@ -10,13 +10,20 @@ class Alphabet
         $this->letters = $language->init();
     }
 
-    public function getLetters(): array
+    public function getCodeLetters(): array
     {
         return $this->letters;
+    }
+
+    public function getHtmlLetters(): array
+    {
+        return $this->language->getHtmlLetters($this->letters);
     }
 
     public function getLetter(int $letterNum, string $position): string
     {
          return $this->language->getLetter($this->letters, $letterNum, $position);
     }
+
+
 }
