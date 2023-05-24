@@ -10,12 +10,13 @@ $alphabet = new Alphabet(new LanguageArab());
 $codeLetters = $alphabet->getCodeLetters();
 $htmlLetters = $alphabet->getHtmlLetters();
 
-// next, need to make an implementation of the dictionary
-$dictionary = new Dictionary(new DicEnglish, new DicArab);
-$title = $dictionary->translate('alphabet');
+// next, need to make an implementation of$dictionary = new Dictionary(new DicEnglish, new DicArab);
+//$title = $dictionary->translate('alphabet');
+
+$counter = new Counter();
 
 $data = [
-    'num' => 1,
+    'num' => $counter::count(),
     'letters' => $htmlLetters,
     'title' => $title,
 ];
